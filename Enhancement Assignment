@@ -1,0 +1,236 @@
+Q 2
+
+#include<iostream>
+using namespace std;
+
+struct book
+{
+	char bid[5];
+	char name[30];
+	int price;
+};
+
+void main(){
+	int num;
+	book *ptr;
+	cout<<"enter num";
+	cin>>num;
+	ptr=new book [num];
+	for(int i=0;i<num;i++)
+	{
+		cin>>ptr[i].bid>>ptr[i].name>>ptr[i].price;
+
+	}
+	for(int i=0;i<num;i++)
+	{
+		cout<<ptr[i].bid<<" ";
+		cout<<ptr[i].name<<" ";
+		cout<<ptr[i].price<<endl;
+	}
+
+}
+********************************************************
+Q3 
+
+#include<iostream>
+using namespace std;
+
+struct book
+{
+	char bid[5];
+	char name[30];
+	int price;
+};
+
+void main(){
+	
+	book *ptr;
+	ptr=new book[2];
+	for(int i=0;i<2;i++)
+	{
+		cin>>ptr[i].bid>>ptr[i].name>>ptr[i].price;
+
+	}
+	for(int i=0;i<2;i++)
+	{
+		cout<<ptr[i].bid<<" ";
+		cout<<ptr[i].name<<" ";
+		cout<<ptr[i].price<<endl;
+	}
+
+}
+***************************************************
+Q 11
+
+#include<iostream>
+using namespace std;
+
+struct book
+{
+	int bid;
+}b1={100};
+struct emp
+{
+	int eid;
+	char name[10];
+	char city[10];
+}e1={101,"gajen","mum"};
+struct student
+{
+	int sid;
+	char name[10];
+}s1={102,"suman"};
+
+
+void disp(book *ptr){
+	cout<<ptr->bid<<endl;
+
+}
+void disp(emp *ptr1){
+	cout<<ptr1->eid<<ptr1->name<<ptr1->city<<endl;
+
+}
+void disp(student *ptr2){
+	cout<<ptr2->sid<<ptr2->name<<endl;
+
+}
+void main(){
+	book *ptr;
+	emp *ptr1;
+	student *ptr2;
+	disp(&b1);
+	disp(&e1);
+	disp(&s1);
+
+}
+**********************************************************
+Q 5
+
+#include<iostream>
+using namespace std;
+void sqr(int k)
+{
+	int c=k*k;
+	std::cout<<"square:"<<c<<endl;
+}
+
+int main()
+{
+	//int num=5;
+	void (*ptr)(int);
+	ptr=sqr;
+	ptr(6);
+	//printf("square :",sqr(num));
+}
+*********************************************************
+Q 6
+
+#include<iostream>
+using namespace std;
+void swap(int *a,int *b)
+{
+	int c=*a;
+	*a=*b;
+	*b=c;
+}
+
+int main()
+{
+	int x=5;
+	int y=8;
+	cout<<"before swap  "<<x<<" "<<y<<endl;
+	swap(&x,&y);
+	cout<<"after swap  "<<x<<" "<<y<<endl;
+}
+*********************************************************
+Q 7
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int req;
+	cout<<"enter no of initials  ";
+	cin>>req;
+	char *name=new char[req+1];
+	cout<<"enter the name  ";
+	for(int i=0;i<req;i++)
+	{
+	cin>>name[i];
+	}
+	for(int i=0;i<req;i++)
+	{
+	cout<<name[i];
+	}
+	cout<<endl;
+}
+**********************************************************
+Q 8
+
+
+#include<iostream>
+using namespace std;
+
+void disp(char a,char b,char c,char d='D',char e='E')
+{
+	cout<<a<<" "<<b<<" "<<c<<" "<<d<<" "<<e<<" "<<endl;
+}
+
+int main()
+{
+	//char x='A',y='B';
+	char x='A',y='B',z='C';
+	char x='A',y='B',z='C',p='S',q='T';
+	disp(x,y,z);
+}
+
+**********************************************************
+Q 9
+
+
+#include<iostream>
+using namespace std;
+
+struct student
+{
+	int sid;
+	char name[10];
+}s1={102,"suman"};
+
+student &getref()
+{
+	return s1;
+}
+
+
+int main()
+{
+	student &ref=getref();
+	cout<<ref.sid<<" "<<ref.name<<endl;
+
+}
+
+
+*******************************************************
+Q 10
+
+#include<iostream>
+using namespace std;
+void disp(int a,int *ptr,int &ref)
+{
+	cout<<a<<" "<<*ptr<<" "<<ref<<endl;
+}
+
+
+int main()
+{
+	int num=6;
+	int num2=7;
+	int num3=9;
+	int *ptr=&num2;
+	int &ref=num3;
+	disp(num,ptr,ref);
+
+}
+
+*********************************************************
